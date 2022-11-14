@@ -130,7 +130,7 @@ class TicketCustomTimer(models.Model):
         vals['team_timer'] = time.time()
         vals['user_timer'] = time.time()
         self.responsible.append({"grupo": vals['team_id'],
-                                 "usuario": vals['user_id'],
+                                 
                                  "number_team": 1,
                                  "number_user": 1,
                                  "team_duration": 0.00,
