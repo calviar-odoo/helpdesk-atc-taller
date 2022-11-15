@@ -12,7 +12,7 @@ class TicketCustomTimer(models.Model):
     _inherit = 'helpdesk.ticket'
 
     team_id = fields.Many2one(required=True)
-    user_id = fields.Many2one('res.users', string='Asignado a', default=lambda self: self._get_user(), required=True)
+    user_id = fields.Many2one('res.users', string='Asignado a', default=lambda self: self._get_user()) #required=True
     #helpdesk_team_id = fields.Many2one('res.users', string='Asignado', default=lambda self: self._get_user(), required=True)
     canal_type = fields.Many2one('res.canales', string='Canal', index=True)
     alias_ticket = fields.Many2one('res.alias', string='Alias', index=True)
@@ -130,7 +130,7 @@ class TicketCustomTimer(models.Model):
         vals['team_timer'] = time.time()
         vals['user_timer'] = time.time()
         self.responsible.append({"grupo": vals['team_id'],
-                                 "usuario": vals['user_id'],
+                                 
                                  "number_team": 1,
                                  "number_user": 1,
                                  "team_duration": 0.00,
